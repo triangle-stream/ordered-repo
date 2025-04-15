@@ -1,0 +1,15 @@
+[user]
+  name = triangle-stream
+  email = ae.giordanomarco@gmail.com
+
+[merge]
+  ff = false
+
+[alias]
+  stage-up = "!git checkout stage && git pull origin stage"
+  master-up = "!git checkout master && git pull origin master"
+  feature = "!f() { git checkout stage && git pull && git checkout -b feature-$1; }; f"
+  rebase-stage = "!git fetch origin stage && git rebase origin/stage"
+  merge-feature = "!git checkout stage && git merge --no-ff"
+  deploy = "!git checkout master && git pull origin master && git merge --no-ff stage -m 'Deploy da stage a master' && git push origin master"
+
